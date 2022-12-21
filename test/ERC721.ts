@@ -1,17 +1,19 @@
+import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
+import { Contract } from "ethers";
+
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
 const { BigNumber } = require("ethers");
 
 describe("Lock", function () {
-  let ERC721;
-  let users, owner, addr1, addr2;
+  let ERC721: Contract;
+  let users, owner: SignerWithAddress, addr1: SignerWithAddress, addr2: SignerWithAddress;
 
   before(async () => {
     users = await ethers.getSigners();
     owner = users[0];
     addr1 = users[1];
     addr2 = users[2];
-    addr3 = users[3];
   });
 
   describe("Deployment and Mint", function () {

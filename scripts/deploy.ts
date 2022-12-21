@@ -7,7 +7,7 @@
 const hre = require("hardhat");
 
 async function main() {
-  const ERC721 = await hre.ethers.getContractFactory("FariaToken");
+  let ERC721 = await hre.ethers.getContractFactory("FariaToken");
   ERC721 = await ERC721.deploy();
 
   await ERC721.deployed();
